@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .header img {
+      height: 50px; /* Adjust logo size */
+      margin-right: 10px;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      margin: 0;
+      color: #333;
+    }
+
+    .header h2 {
+      font-size: 28px;
+      margin: 0;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .column {
+      flex: 1;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-group input[type="radio"] {
+      width: auto;
+    }
+
+    .form-group .radio-group label {
+      margin-right: 15px;
+      font-weight: normal;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <div class="header">
+    <img src="logo.png" alt="GITAM University Logo">
+    <div>
+      <h1>GITAM University</h1>
+      <h2>Online Registration Form</h2>
+    </div>
+  </div>
+
+  <!-- Form Section -->
+  <form action="#">
+    <!-- Left Column -->
+    <div class="column">
+      <div class="form-group">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" required>
+      </div>
+      <div class="form-group">
+        <label for="middle-name">Middle Name:</label>
+        <input type="text" id="middle-name" name="middle-name">
+      </div>
+      <div class="form-group">
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" required>
+      </div>
+      <div class="form-group">
+        <label for="father">Father's Name:</label>
+        <input type="text" id="father" name="father" required>
+      </div>
+      <div class="form-group">
+        <label for="mother">Mother's Name:</label>
+        <input type="text" id="mother" name="mother" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label>Gender:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="gender" value="male" required> Male</label>
+          <label><input type="radio" name="gender" value="female"> Female</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="column">
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+      <div class="form-group">
+        <label for="institute">Institute:</label>
+        <select id="institute" name="institute" required>
+          <option value="" disabled selected>Select Institute</option>
+          <option value="Gitam">Gitam</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="branch">Branch:</label>
+        <select id="branch" name="branch" required>
+          <option value="" disabled selected>Select Branch</option>
+          <option value="CSE">CSE</option>
+          <option value="ECE">ECE</option>
+          <option value="Mechanical">Mechanical</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="6" required></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="submit-btn">Submit</button>
+      </div>
+    </div>
+  </form>
+</body>
+</html>
