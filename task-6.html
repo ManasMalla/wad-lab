@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 6</title>
+  </head>
+  <body>
+    <script>
+      function isEvenOrOdd() {
+        const input = document.getElementById("input");
+        const value = parseInt(input.value);
+        if (value % 2 === 0) {
+          alert("Even");
+        } else {
+          alert("Odd");
+        }
+      }
+      function isPrime() {
+        const input = document.getElementById("input");
+        const value = parseInt(input.value);
+        let isPrime = true;
+        for (let i = 2; i < value; i++) {
+          if (value % i === 0) {
+            isPrime = false;
+            break;
+          }
+        }
+        if (isPrime) {
+          alert("Prime");
+        } else {
+          alert("Not Prime");
+        }
+      }
+    </script>
+    <input id="input" placeholder="Enter a number" />
+    <button onclick="isEvenOrOdd()">Even/Odd</button>
+    <button onclick="isPrime()">Prime Number</button>
+  </body>
+</html>
