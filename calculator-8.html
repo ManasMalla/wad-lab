@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        max-width: 400px;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        gap: 28px;
+      }
+      input {
+        border: 2px solid black;
+        padding: 12px 24px;
+        border-radius: 28px;
+      }
+      button {
+        border: 2px solid black;
+        padding: 8px;
+        border-radius: 28px;
+        background-color: white;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        width: max-content;
+      }
+      .grid button {
+        width: 72px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var firstNumber = 0;
+      var secondNumber = 0;
+      var operationType = "";
+      var isOperationDone = false;
+      function enterDigit(digit) {
+        const input = document.getElementById("input");
+        input.value += digit;
+      }
+      function operation(op) {
+        const input = document.getElementById("input");
+        firstNumber = parseInt(input.value);
+        operationType = op;
+        input.value = "";
+      }
+      function calculate() {
+        if (operationType === "C") {
+          const input = document.getElementById("input");
+          input.value = "";
+          firstNumber = 0;
+          secondNumber = 0;
+          operationType = "";
+          return;
+        }
+        const input = document.getElementById("input");
+        secondNumber = parseInt(input.value);
+        let result = 0;
+        switch (operationType) {
+          case "+":
+            result = firstNumber + secondNumber;
+            break;
+          case "-":
+            result = firstNumber - secondNumber;
+            break;
+          case "*":
+            result = firstNumber * secondNumber;
+            break;
+          case "/":
+            result = firstNumber / secondNumber;
+            break;
+        }
+        input.value = result;
+      }
+    </script>
+    <h2>Calculator</h2>
+    <input id="input" placeholder="Enter a number" />
+    <div class="grid">
+      <button onclick="enterDigit(1)">1</button>
+      <button onclick="enterDigit(2)">2</button>
+      <button onclick="enterDigit(3)">3</button>
+      <button onclick="operation('+')">+</button>
+      <button onclick="enterDigit(4)">4</button>
+      <button onclick="enterDigit(5)">5</button>
+      <button onclick="enterDigit(6)">6</button>
+      <button onclick="operation('-')">-</button>
+      <button onclick="enterDigit(7)">7</button>
+      <button onclick="enterDigit(8)">8</button>
+      <button onclick="enterDigit(9)">9</button>
+      <button onclick="operation('*')">*</button>
+      <button onclick="enterDigit(0)">0</button>
+      <button onclick="operation('C')">C</button>
+      <button onclick="operation('/')">/</button>
+      <button onclick="calculate()">=</button>
+    </div>
+  </body>
+</html>
